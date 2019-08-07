@@ -1,6 +1,4 @@
 # baseball game
-git init
-
 import random
 random_num = random.sample(range(1, 10), 3)  #임의의 숫자 3개를 호출
 print(random_num)
