@@ -4,42 +4,43 @@ count = 0
 
 #승리시 win → true 로 변환
 while win == False:
-    play = [input('가위,바위,보 중 하나를 입력하세요')]
-    print(play)
-    count += 1
+    play = input('가위,바위,보 중 하나를 입력하세요')
+    #print(play)
 
 #오류값 입력 제외
-    if play != ['가위'] and play != ['바위'] and play != ['보']:
+    if play != '가위' and play != '바위' and play != '보':
         print('다시 입력해주세요')
         continue
     else:
         pass
 
     import random
-    computer = random.sample(('가위', '바위', '보'), 1)
-    print(computer)
+    num = random.sample(('가위', '바위', '보'), 1)
+    computer = "".join(num)
+    #print(computer)
 
 # 게임 규칙
     if play == computer:
-        print ('비겼습니다')
+        print ('둘다 {0}로 비겼습니다'.format(play))
     else:
-        if play == ['바위']:
-            if computer == ['보']:
-                print('졌습니다')
-            elif computer == ['가위']:
-                print('이겼습니다')
+        if play == '바위':
+            if computer == '보':
+                print('플레이어가 {0}로 졌습니다'.format(play))
+            elif computer == '가위':
+                print('플레이어가 {0}로 이겼습니다'.format(play))
                 win += 1
-        if play == ['가위']:
-            if computer == ['바위']:
-                print('졌습니다')
-            elif computer == ['보']:
-                print('이겼습니다')
+        if play == '가위':
+            if computer == '바위':
+                print('플레이어가 {0}로 졌습니다'.format(play))
+            elif computer == '보':
+                print('플레이어가 {0}로 이겼습니다'.format(play))
                 win += 1
-        if play == ['보']:
-            if computer == ['가위']:
-                print('졌습니다')
-            elif computer == ['바위']:
-                print('이겼습니다')
+        if play == '보':
+            if computer == '가위':
+                print('플레이어가 {0}로 졌습니다'.format(play))
+            elif computer == '바위':
+                print('플레이어가 {0}로 이겼습니다'.format(play))
                 win += 1
 
-    print ('총 시도 횟수 : ',count)
+    count += 1
+    print ('총 시도 횟수 : {0}\n'.format(count))
