@@ -1,0 +1,45 @@
+play = 0
+win = 0
+count = 0
+
+#승리시 win → true 로 변환
+while win == False:
+    play = [input('가위,바위,보 중 하나를 입력하세요')]
+    print(play)
+    count += 1
+
+#오류값 입력 제외
+    if play != ['가위'] and play != ['바위'] and play != ['보']:
+        print('다시 입력해주세요')
+        continue
+    else:
+        pass
+
+    import random
+    computer = random.sample(('가위', '바위', '보'), 1)
+    print(computer)
+
+# 게임 규칙
+    if play == computer:
+        print ('비겼습니다')
+    else:
+        if play == ['바위']:
+            if computer == ['보']:
+                print('졌습니다')
+            elif computer == ['가위']:
+                print('이겼습니다')
+                win += 1
+        if play == ['가위']:
+            if computer == ['바위']:
+                print('졌습니다')
+            elif computer == ['보']:
+                print('이겼습니다')
+                win += 1
+        if play == ['보']:
+            if computer == ['가위']:
+                print('졌습니다')
+            elif computer == ['바위']:
+                print('이겼습니다')
+                win += 1
+
+    print ('총 시도 횟수 : ',count)
